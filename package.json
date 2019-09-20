@@ -41,8 +41,10 @@
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
+    "@types/fetch-mock": "^7.3.1",
     "@types/react-test-renderer": "^16.9.0",
     "@types/storybook__react": "^4.0.2",
+    "fetch-mock": "^7.3.9",
     "react-test-renderer": "^16.9.0"
   }
 }
