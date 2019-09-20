@@ -7,10 +7,14 @@
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
+    "@types/react-redux": "^7.1.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.1.1",
     "storybook": "^5.1.11",
+    "typesafe-actions": "^4.4.2",
     "typescript": "3.6.3"
   },
   "scripts": {
