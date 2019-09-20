@@ -1,4 +1,4 @@
-# Demo front end app using data from [rickandmortyapi](https://rickandmortyapi.com)
+# Demo front end app using data from [rickandmortyapi](https://rickandmortyapi.com)
 
 My goal with this app is to solidify knowledge around frameworks I'm already familiar with,<br>
 As well as learn a few new libraries/frameworks I have no experience with.
