@@ -55,3 +55,7 @@ Start the storybook component explorer on port 9009, see [storybook.js.org](http
 
 This will build the storybook configured in the Storybook directory into a static web app and place it inside the storybook-static directory. Now you can deploy the content in the storybook-static directory wherever you want.<br>
 Docs for Exporting Storybook as a Static App can be found [here](https://storybook.js.org/docs/basics/exporting-storybook/#docs-content)
+
+## Copyright?
+
+Rick and Morty is created by Justin Roiland and Dan Harmon for [Adult Swim](https://www.adultswim.com/). The data and images are used without claim of ownership and belong to their respective owners.
