@@ -42,6 +42,9 @@
     "@storybook/addon-links": "^5.2.1",
     "@storybook/addons": "^5.2.1",
     "@storybook/react": "^5.2.1",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/enzyme-to-json": "^1.5.3",
     "@types/fetch-mock": "^7.3.1",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.5",
@@ -50,7 +53,16 @@
     "@types/react-redux": "^7.1.2",
     "@types/react-test-renderer": "^16.9.0",
     "@types/storybook__react": "^4.0.2",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
     "fetch-mock": "^7.3.9",
+    "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

@@ -5,7 +5,7 @@ import renderer from "react-test-renderer";
 import ThumbnailProps from "./ThumbnailProps";
 import characters from "../../testData/characters";
 
-const testCases = characters.map(c => [c]);
+const testCases: ThumbnailProps[][] = characters.map(c => [c]);
 
 describe("Thumbnail", () => {
   describe.each(testCases)("Character(%o)", (props: ThumbnailProps) => {
@@ -21,7 +21,7 @@ describe("Thumbnail", () => {
       expect(sut).toMatchInlineSnapshot(`
               <p>
                 <img
-                  alt="Image of ${props.name}"
+                  alt="${props.name} mug shot"
                   src="${props.imageUrl}"
                 />
                 ${props.name}

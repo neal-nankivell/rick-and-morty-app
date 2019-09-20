@@ -3,7 +3,7 @@ import ThumbnailProps from "./ThumbnailProps";
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => (
   <p>
-    <img src={props.imageUrl} alt={`Image of ${props.name}`} />
+    <img src={props.imageUrl} alt={`${props.name} mug shot`} />
     {props.name}
   </p>
 );

@@ -2,11 +2,11 @@ import { Character } from "../redux/ApplicationState";
 
 export const characters: Character[] = [
   {
-    name: "Rick",
+    name: "Test Rick",
     imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
   },
   {
-    name: " Morty ",
+    name: "Test Morty",
     imageUrl: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
   }
 ];
