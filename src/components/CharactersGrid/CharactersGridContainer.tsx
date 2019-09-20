@@ -10,7 +10,7 @@ export const mapStateToProps: (
   return { characters: state.characters };
 };
 
-export const mapDispatchToProps = (dispatch: Dispatch) => {};
+export const mapDispatchToProps = (dispatch: Dispatch) => ({});
 
 export default connect(
   mapStateToProps,
