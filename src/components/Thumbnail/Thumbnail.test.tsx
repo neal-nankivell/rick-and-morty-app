@@ -3,14 +3,12 @@ import ReactDOM from "react-dom";
 import Thumbnail from "./Thumbnail";
 import renderer from "react-test-renderer";
 import ThumbnailProps from "./ThumbnailProps";
+import characters from "../../testData/characters";
 
-const characters: ThumbnailProps[][] = [
-  [{ name: "Rick" }],
-  [{ name: " Morty " }]
-];
+const testCases = characters.map(c => [c]);
 
 describe("Thumbnail", () => {
-  describe.each(characters)("Character(%o)", (props: ThumbnailProps) => {
+  describe.each(testCases)("Character(%o)", (props: ThumbnailProps) => {
     it("renders without crashing", () => {
       const div = document.createElement("div");
       ReactDOM.render(<Thumbnail {...props} />, div);
@@ -22,6 +20,10 @@ describe("Thumbnail", () => {
 
       expect(sut).toMatchInlineSnapshot(`
               <p>
+                <img
+                  alt="Image of ${props.name}"
+                  src="${props.imageUrl}"
+                />
                 ${props.name}
               </p>
             `);

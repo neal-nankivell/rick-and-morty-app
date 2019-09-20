@@ -6,7 +6,7 @@ export const CharactersGrid: React.FC<CharactersGridProps> = props => {
   return (
     <>
       {props.characters.map(character => (
-        <Thumbnail name={character.name} />
+        <Thumbnail name={character.name} imageUrl={character.imageUrl} />
       ))}
     </>
   );
