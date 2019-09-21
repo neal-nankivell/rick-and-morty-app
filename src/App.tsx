@@ -7,6 +7,7 @@ import CharactersGridContainer from "./components/CharactersGrid/CharactersGridC
 const App: React.FC = () => {
   return (
     <Provider store={store}>
+      <h1>Rick and Morty Characters</h1>
       <CharactersGridContainer />
     </Provider>
   );
