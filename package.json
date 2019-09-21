@@ -10,6 +10,7 @@
     "redux": "^4.0.4",
     "redux-saga": "^1.1.1",
     "storybook": "^5.1.11",
+    "styled-components": "^4.3.2",
     "typesafe-actions": "^4.4.2",
     "typescript": "3.6.3"
   },
@@ -53,6 +54,7 @@
     "@types/react-redux": "^7.1.2",
     "@types/react-test-renderer": "^16.9.0",
     "@types/storybook__react": "^4.0.2",
+    "@types/styled-components": "^4.1.19",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.4.0",
