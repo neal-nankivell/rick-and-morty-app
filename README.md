@@ -6,7 +6,7 @@ As well as learn a few new libraries/frameworks I have no experience�
 ## New things to learn
 
 - [ ] [GraphQL](https://graphql.org/)
-- [ ] [Emotion](emotion.sh)
+- [ ] <del>[Emotion](emotion.sh)</del> Looking for another style lib to learn. I was unable to get this working with create react app without eject. The docs say it should work with babel-macros but I did not find this the case. When I searched github for usages of this with typescript I only found a handful and they all seemed to be using custom builds anyway.
 - [ ] [Redux-Saga](https://redux-saga.js.org/)
 
 ## Fimilar things to reinforce
