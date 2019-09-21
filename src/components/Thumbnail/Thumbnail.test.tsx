@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Thumbnail from "./Thumbnail";
-import renderer from "react-test-renderer";
 import ThumbnailProps from "./ThumbnailProps";
 import characters from "../../testData/characters";
+import { shallow } from "enzyme";
 
 const testCases: ThumbnailProps[][] = characters.map(c => [c]);
 
@@ -16,16 +16,18 @@ describe("Thumbnail", () => {
     });
 
     it("renders correctly", () => {
-      const sut = renderer.create(<Thumbnail {...props} />).toJSON();
+      const sut = shallow(<Thumbnail {...props} />);
 
       expect(sut).toMatchInlineSnapshot(`
-              <p>
-                <img
+              <styled.div>
+                <styled.img
                   alt="${props.name} mug shot"
                   src="${props.imageUrl}"
                 />
-                ${props.name}
-              </p>
+                <styled.span>
+                  ${props.name}
+                </styled.span>
+              </styled.div>
             `);
     });
   });

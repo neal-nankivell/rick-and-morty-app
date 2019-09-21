@@ -15,8 +15,8 @@ describe("CharacterGrid", () => {
     const sut = shallow(<CharactersGrid characters={characters.slice(0, 2)} />);
 
     expect(sut).toMatchInlineSnapshot(`
-      <ul>
-        <li
+      <styled.ul>
+        <styled.li
           key="Test Rick"
         >
           <Thumbnail
@@ -24,8 +24,8 @@ describe("CharacterGrid", () => {
             key="Test Rick"
             name="Test Rick"
           />
-        </li>
-        <li
+        </styled.li>
+        <styled.li
           key="Test Morty"
         >
           <Thumbnail
@@ -33,8 +33,8 @@ describe("CharacterGrid", () => {
             key="Test Morty"
             name="Test Morty"
           />
-        </li>
-      </ul>
+        </styled.li>
+      </styled.ul>
     `);
   });
 });
