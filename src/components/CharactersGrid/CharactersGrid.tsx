@@ -6,6 +6,7 @@ import styled from "styled-components";
 const Container = styled.ul`
   margin: 0 auto;
   text-align: center;
+  padding: 0;
 `;
 
 const Item = styled.li`
