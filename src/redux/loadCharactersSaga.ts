@@ -1,17 +1,24 @@
-import { takeLatest, put } from "@redux-saga/core/effects";
+import { takeLatest, put, select, delay } from "@redux-saga/core/effects";
 import { LOAD_CHARACTERS } from "./actionTypes";
 import api, { GetCharactersResponse } from "../api/api";
 import { updateCharacters } from "./actions";
-import { Character } from "./ApplicationState";
+import { Character, ApplicationState } from "./ApplicationState";
 
 function* loadCharacters() {
-  const response: GetCharactersResponse | undefined = yield api.getCharacters();
+  yield delay(200);
+  yield put(updateCharacters([])); // ToDo fill with empty state placeholders
+  const state: ApplicationState = yield select();
+  const response: GetCharactersResponse | undefined = yield api.getCharacters(
+    state.filterString
+  );
   if (response === undefined) {
     console.log("Error retreving characters");
+    yield put(updateCharacters([]));
   } else {
     const characters: Character[] = response.results
       .filter(c => c.name && c.url)
       .map(c => ({
+        id: c.id,
         name: c.name,
         imageUrl: c.image
       }));

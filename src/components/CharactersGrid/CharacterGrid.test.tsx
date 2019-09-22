@@ -17,7 +17,7 @@ describe("CharacterGrid", () => {
     expect(sut).toMatchInlineSnapshot(`
       <styled.ul>
         <styled.li
-          key="Test Rick"
+          key="1"
         >
           <Thumbnail
             imageUrl="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
@@ -26,7 +26,7 @@ describe("CharacterGrid", () => {
           />
         </styled.li>
         <styled.li
-          key="Test Morty"
+          key="2"
         >
           <Thumbnail
             imageUrl="https://rickandmortyapi.com/api/character/avatar/2.jpeg"

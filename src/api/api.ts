@@ -1,5 +1,3 @@
-import { Character } from "../redux/ApplicationState";
-
 export interface GetCharactersLocation {
   name: string;
   url: string;
@@ -28,10 +26,15 @@ export interface GetCharactersResponse {
   }[];
 }
 
-export async function getCharacters(): Promise<
-  GetCharactersResponse | undefined
-> {
-  const response = await fetch("https://rickandmortyapi.com/api/character");
+export async function getCharacters(
+  nameFilter: string | undefined = undefined
+): Promise<GetCharactersResponse | undefined> {
+  let url: string = "https://rickandmortyapi.com/api/character";
+  if (nameFilter) {
+    url += `/?name=${nameFilter}`;
+  }
+
+  const response = await fetch(url);
   if (!response.ok) {
     console.log(response.statusText);
     return undefined;

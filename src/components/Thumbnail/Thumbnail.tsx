@@ -13,6 +13,7 @@ const Container = styled.div`
   position: relative;
   height: ${imageSize}em;
   width: ${imageSize}em;
+  background: #00000050;
 `;
 
 const Caption = styled.span`
@@ -26,11 +27,13 @@ const Caption = styled.span`
   text-align: center;
 `;
 
-export const Thumbnail: React.FC<ThumbnailProps> = props => (
-  <Container>
-    <Image src={props.imageUrl} alt={`${props.name} mug shot`} />
-    <Caption>{props.name}</Caption>
-  </Container>
-);
+export const Thumbnail: React.FC<ThumbnailProps> = props => {
+  return (
+    <Container>
+      <Image src={props.imageUrl} alt={`${props.name} mug shot`} />
+      <Caption>{props.name}</Caption>
+    </Container>
+  );
+};
 
 export default Thumbnail;

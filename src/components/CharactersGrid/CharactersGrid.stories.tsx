@@ -6,6 +6,6 @@ import withRedux from "../../testData/withReduxDecorator";
 import CharactersGridContainer from "./CharactersGridContainer";
 
 storiesOf("Components/Characters Grid", module)
-  .add("Static Test Data", () => <CharactersGrid characters={characters} />)
   .addDecorator(withRedux)
+  .add("Static Test Data", () => <CharactersGrid characters={characters} />)
   .add("Live Data via Redux", () => <CharactersGridContainer />);

@@ -18,7 +18,7 @@ export const CharactersGrid: React.FC<CharactersGridProps> = props => {
   return (
     <Container>
       {props.characters.map(character => (
-        <Item key={character.name}>
+        <Item key={character.id}>
           <Thumbnail
             key={character.name}
             name={character.name}
