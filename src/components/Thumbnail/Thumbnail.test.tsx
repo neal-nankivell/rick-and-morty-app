@@ -17,18 +17,25 @@ describe("Thumbnail", () => {
 
     it("renders correctly", () => {
       const sut = shallow(<Thumbnail {...props} />);
-
-      expect(sut).toMatchInlineSnapshot(`
-              <styled.div>
-                <styled.img
-                  alt="${props.name} mug shot"
-                  src="${props.imageUrl}"
-                />
-                <styled.span>
-                  ${props.name}
-                </styled.span>
-              </styled.div>
-            `);
+      if (props.name !== undefined) {
+        expect(sut).toMatchInlineSnapshot(`
+        <styled.div>
+          <styled.img
+            alt="${props.name} mug shot"
+            src="${props.imageUrl}"
+          />
+          <styled.span>
+            ${props.name}
+          </styled.span>
+        </styled.div>
+      `);
+      } else {
+        expect(sut).toMatchInlineSnapshot(`
+        <styled.div>
+          <styled.span />
+        </styled.div>
+        `);
+      }
     });
   });
 });
