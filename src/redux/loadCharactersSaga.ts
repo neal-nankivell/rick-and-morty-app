@@ -1,11 +1,22 @@
 import { takeLatest, put } from "@redux-saga/core/effects";
 import { LOAD_CHARACTERS } from "./actionTypes";
-import api from "../api/api";
+import api, { GetCharactersResponse } from "../api/api";
 import { updateCharacters } from "./actions";
+import { Character } from "./ApplicationState";
 
 function* loadCharacters() {
-  const characters = yield api.getCharacters();
-  yield put(updateCharacters(characters));
+  const response: GetCharactersResponse | undefined = yield api.getCharacters();
+  if (response === undefined) {
+    console.log("Error retreving characters");
+  } else {
+    const characters: Character[] = response.results
+      .filter(c => c.name && c.url)
+      .map(c => ({
+        name: c.name,
+        imageUrl: c.image
+      }));
+    yield put(updateCharacters(characters));
+  }
 }
 
 export default function* watchLoadCharacters() {

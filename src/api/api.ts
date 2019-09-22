@@ -1,24 +1,50 @@
 import { Character } from "../redux/ApplicationState";
 
-export async function getCharacters(): Promise<Character[]> {
+export interface GetCharactersLocation {
+  name: string;
+  url: string;
+}
+
+export interface GetCharactersResponse {
+  info: {
+    count: number;
+    pages: number;
+    next: string;
+    previous: string;
+  };
+  results: {
+    id: number;
+    name: string;
+    status: string;
+    species: string;
+    type: string;
+    gender: string;
+    origin: GetCharactersLocation;
+    location: GetCharactersLocation;
+    image: string;
+    episode: string[];
+    url: string;
+    created: string;
+  }[];
+}
+
+export async function getCharacters(): Promise<
+  GetCharactersResponse | undefined
+> {
   const response = await fetch("https://rickandmortyapi.com/api/character");
   if (!response.ok) {
     console.log(response.statusText);
-    return [];
+    return undefined;
   }
 
-  const data = (await response.json()) as {
-    results: { name: string; image: string }[];
-  };
+  const data = (await response.json()) as GetCharactersResponse;
 
   if (data.results === undefined || !Array.isArray(data.results)) {
     console.log("Results for getCharacters is not in the expected format");
-    return [];
+    return undefined;
   }
 
-  return data.results
-    .filter(c => c.name !== undefined || c.image !== undefined)
-    .map(c => ({ name: c.name, imageUrl: c.image }));
+  return data;
 }
 
 export default {
