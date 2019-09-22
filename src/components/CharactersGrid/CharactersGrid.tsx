@@ -15,7 +15,17 @@ const Item = styled.li`
   margin: 0.5em;
 `;
 
+const NoResults = styled.p`
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em;
+`;
+
 export const CharactersGrid: React.FC<CharactersGridProps> = props => {
+  if (props.characters.length === 0) {
+    return <NoResults>No Characters Found.</NoResults>;
+  }
   return (
     <Container>
       {props.characters.map(character => (
