@@ -10,7 +10,7 @@ storiesOf("Components/Thumbnail", module).add("Static Test Data", () => {
     c =>
       (options = {
         ...options,
-        [c.name || "Empty State"]: characters.indexOf(c)
+        [c.name || "Skeleton state"]: characters.indexOf(c)
       })
   );
   const character = characters[select("Character", options, 0)];
