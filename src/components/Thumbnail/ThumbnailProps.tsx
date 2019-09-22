@@ -1,8 +1,8 @@
 export interface ThumbnailOwnProps {}
 
 export interface ThumbnailStateProps {
-  name: string;
-  imageUrl: string;
+  name?: string;
+  imageUrl?: string;
 }
 
 export interface ThumbnailDispatchProps {}

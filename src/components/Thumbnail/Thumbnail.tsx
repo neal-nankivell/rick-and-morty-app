@@ -28,6 +28,13 @@ const Caption = styled.span`
 `;
 
 export const Thumbnail: React.FC<ThumbnailProps> = props => {
+  if (props.name === undefined) {
+    return (
+      <Container>
+        <Caption />
+      </Container>
+    );
+  }
   return (
     <Container>
       <Image src={props.imageUrl} alt={`${props.name} mug shot`} />

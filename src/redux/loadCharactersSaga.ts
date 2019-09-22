@@ -3,10 +3,11 @@ import { LOAD_CHARACTERS } from "./actionTypes";
 import api, { GetCharactersResponse } from "../api/api";
 import { updateCharacters } from "./actions";
 import { Character, ApplicationState } from "./ApplicationState";
+import placeHolderCharacters from "./placeHolderCharacters";
 
 function* loadCharacters() {
   yield delay(200);
-  yield put(updateCharacters([])); // ToDo fill with empty state placeholders
+  yield put(updateCharacters(placeHolderCharacters));
   const state: ApplicationState = yield select();
   const response: GetCharactersResponse | undefined = yield api.getCharacters(
     state.filterString

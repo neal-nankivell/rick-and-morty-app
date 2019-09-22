@@ -10,6 +10,11 @@ export const characters: Character[] = [
     id: 2,
     name: "Test Morty",
     imageUrl: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+  },
+  {
+    id: -1,
+    name: undefined,
+    imageUrl: undefined
   }
 ];
 
