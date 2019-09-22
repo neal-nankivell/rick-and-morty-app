@@ -1,4 +1,4 @@
-import { takeLatest, put } from "@redux-saga/core/effects";
+import { put, throttle } from "@redux-saga/core/effects";
 import { NEW_FILTER } from "./actionTypes";
 import { updateFilter, loadCharacters } from "./actions";
 
@@ -8,5 +8,5 @@ function* applyNewFilter(action: ReturnType<typeof updateFilter>) {
 }
 
 export default function* watchNewFilter() {
-  yield takeLatest(NEW_FILTER, applyNewFilter);
+  yield throttle(500, NEW_FILTER, applyNewFilter);
 }

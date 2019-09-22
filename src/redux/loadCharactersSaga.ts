@@ -6,7 +6,7 @@ import { Character, ApplicationState } from "./ApplicationState";
 import placeHolderCharacters from "./placeHolderCharacters";
 
 function* loadCharacters() {
-  yield delay(200);
+  yield delay(500);
   yield put(updateCharacters(placeHolderCharacters));
   const state: ApplicationState = yield select();
   const response: GetCharactersResponse | undefined = yield api.getCharacters(
