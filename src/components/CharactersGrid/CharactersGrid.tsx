@@ -7,6 +7,7 @@ const Container = styled.ul`
   margin: 0 auto;
   text-align: center;
   padding: 0;
+  max-width: 45em;
 `;
 
 const Item = styled.li`
