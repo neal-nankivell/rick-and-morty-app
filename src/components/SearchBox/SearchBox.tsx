@@ -8,17 +8,16 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  width: 20em;
-  max-width: 600px;
+  width: 100%;
+  max-width: 20em;
   color: #fff;
   padding-left: 1em;
+  margin: 0 auto;
 `;
 
 const Wrapper = styled.div`
   margin: 0 auto;
   text-align: center;
-  padding-left: 2em;
-  padding-right: 2em;
 `;
 
 export const SearchBox: React.FC<SearchBoxProps> = props => {
