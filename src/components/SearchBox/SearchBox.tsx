@@ -27,6 +27,8 @@ export const SearchBox: React.FC<SearchBoxProps> = props => {
         onChange={e => props.onChange(e.target.value)}
         defaultValue={props.value}
         placeholder="Search"
+        type="search"
+        aria-label="Search list of characters"
       />
     </Wrapper>
   );
