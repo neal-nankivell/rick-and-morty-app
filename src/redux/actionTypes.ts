@@ -2,3 +2,5 @@ export const LOAD_CHARACTERS = "LOAD_CHARACTERS";
 export const UPDATE_CHARACTERS = "UPDATE_CHARACTERS";
 export const NEW_FILTER = "NEW_FILTER";
 export const UPDATE_FILTER = "UPDATE_FILTER";
+export const LOAD_MORE = "LOAD_MORE";
+export const UPDATE_NEXT_PAGE = "UPDATE_NEXT_PAGE";

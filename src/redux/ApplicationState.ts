@@ -6,8 +6,6 @@ export interface Character {
 
 export interface ApplicationState {
   characters: Character[];
-  pages: number;
-  nextPageUrl: string;
-  previousPageUrl: string;
+  nextPageUrl?: string;
   filterString: string;
 }

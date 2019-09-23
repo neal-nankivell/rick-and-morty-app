@@ -26,15 +26,18 @@ export interface GetCharactersResponse {
   }[];
 }
 
-export async function getCharacters(
-  nameFilter: string | undefined = undefined
-): Promise<GetCharactersResponse | undefined> {
+export function buildUrl(nameFilter: string | undefined = undefined) {
   let url: string = "https://rickandmortyapi.com/api/character";
   if (nameFilter) {
     url += `/?name=${nameFilter}`;
   }
+  return url;
+}
 
-  const response = await fetch(url);
+export async function getCharacters(
+  url: string | undefined
+): Promise<GetCharactersResponse | undefined> {
+  const response = await fetch(url || buildUrl());
   if (!response.ok) {
     console.log(response.statusText);
     return undefined;

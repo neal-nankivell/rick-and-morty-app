@@ -3,9 +3,7 @@ import placeHolderCharacters from "./placeHolderCharacters";
 
 export const initialState: ApplicationState = Object.freeze({
   characters: placeHolderCharacters,
-  pages: 0,
-  nextPageUrl: "",
-  previousPageUrl: "",
+  nextPageUrl: undefined,
   filterString: ""
 });
 export default initialState;
