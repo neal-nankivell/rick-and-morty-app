@@ -7,7 +7,7 @@ import { LoadMoreButton } from "./LoadMoreButton";
 storiesOf("Components/Load More Button", module).add("Static Test Data", () => {
   return (
     <LoadMoreButton
-      onClick={action("Search Updated")}
+      onClick={action("Load More Clicked!")}
       hidden={boolean("Hidden", false)}
     />
   );
