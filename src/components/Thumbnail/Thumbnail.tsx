@@ -13,7 +13,7 @@ const Container = styled.div`
   position: relative;
   height: ${imageSize}em;
   width: ${imageSize}em;
-  background: #00000050;
+  background: #000000a8;
 `;
 
 const Caption = styled.span`
@@ -22,7 +22,7 @@ const Caption = styled.span`
   left: 0em;
   width: ${imageSize - 1}em;
   padding: 0.5em;
-  background: #00000050;
+  background: #000000a8;
   color: #fff;
   text-align: center;
 `;
