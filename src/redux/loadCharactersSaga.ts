@@ -1,10 +1,4 @@
-import {
-  takeLatest,
-  put,
-  select,
-  delay,
-  throttle
-} from "@redux-saga/core/effects";
+import { takeLatest, put, select, delay } from "@redux-saga/core/effects";
 import { LOAD_CHARACTERS, LOAD_MORE } from "./actionTypes";
 import api, { GetCharactersResponse, buildUrl } from "../api/api";
 import { updateCharacters, updateNextPage } from "./actions";
@@ -34,11 +28,12 @@ function* loadCharacters() {
     yield put(updateCharacters(characters));
     yield put(updateNextPage(response.info.next));
 
-    yield throttle(1000, LOAD_MORE, loadMore);
+    yield takeLatest(LOAD_MORE, loadMore);
   }
 }
 
 function* loadMore() {
+  yield delay(500);
   const state: ApplicationState = yield select();
   if (!state.nextPageUrl) {
     console.log("No next page available");
