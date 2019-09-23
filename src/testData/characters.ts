@@ -21,6 +21,11 @@ export const characters: Character[] = [
     name:
       "Long name Rick yes his name is very long. Some would say he is the most special rick 🦄",
     imageUrl: "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+  },
+  {
+    id: -3,
+    name: "Malformed Image Morty",
+    imageUrl: "Wubbalubbadubdub"
   }
 ];
 
