@@ -28,9 +28,9 @@ export const CharactersGrid: React.FC<CharactersGridProps> = props => {
     return <NoResults>No Characters Found.</NoResults>;
   }
   return (
-    <Container>
+    <Container aria-label="Characters">
       {props.characters.map(character => (
-        <Item key={character.id}>
+        <Item key={character.id} aria-label={character.name}>
           <Thumbnail
             key={character.name}
             name={character.name}
