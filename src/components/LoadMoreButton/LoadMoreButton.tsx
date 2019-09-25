@@ -23,6 +23,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   font-size: 24px;
 `;
+Button.displayName = "StyledButton";
 
 export const LoadMoreButton: React.FC<LoadMoreButtonProps> = props => {
   return (
