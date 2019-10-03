@@ -1,4 +1,4 @@
-import api from "./api";
+import api, { buildUrl } from "./api";
 import fetchMock from "fetch-mock";
 
 describe("api", () => {
@@ -15,7 +15,7 @@ describe("api", () => {
     };
     fetchMock.getOnce(endpoint, mockResponse);
 
-    const result = await sut.getCharacters();
+    const result = await sut.getCharacters(buildUrl());
 
     expect(fetchMock.called(endpoint)).toBeTruthy();
     expect(result).toEqual(mockResponse);
@@ -24,7 +24,7 @@ describe("api", () => {
   test("get characters handles server error", async () => {
     fetchMock.getOnce(endpoint, 500);
 
-    const result = await sut.getCharacters();
+    const result = await sut.getCharacters(buildUrl());
 
     expect(fetchMock.called(endpoint)).toBeTruthy();
     expect(result).toEqual(undefined);
@@ -36,9 +36,17 @@ describe("api", () => {
     };
     fetchMock.getOnce(endpoint, malformedResponse);
 
-    const result = await sut.getCharacters();
+    const result = await sut.getCharacters(buildUrl());
 
     expect(fetchMock.called(endpoint)).toBeTruthy();
     expect(result).toEqual(undefined);
+  });
+
+  it("buildUrl applies name filter", () => {
+    var sut = buildUrl;
+
+    var result = sut("test_filter");
+
+    expect(result.endsWith("/?name=test_filter"));
   });
 });
