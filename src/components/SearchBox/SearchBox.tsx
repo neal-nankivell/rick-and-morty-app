@@ -14,6 +14,7 @@ const StyledInput = styled.input`
   padding-left: 1em;
   margin: 0 auto;
 `;
+StyledInput.displayName = "StyledInput";
 
 const Wrapper = styled.div`
   margin: 0 auto;
