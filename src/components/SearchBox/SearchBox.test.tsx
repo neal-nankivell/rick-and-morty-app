@@ -20,7 +20,7 @@ describe("SearchBox", () => {
 
     expect(sut).toMatchInlineSnapshot(`
       <styled.div>
-        <styled.input
+        <StyledInput
           aria-label="Search list of characters"
           defaultValue="Current Search"
           onChange={[Function]}
@@ -29,5 +29,19 @@ describe("SearchBox", () => {
         />
       </styled.div>
     `);
+  });
+
+  it("Trigers onChange callback when input value changes", () => {
+    const sut = shallow(
+      <SearchBox onChange={mockCallback} value="Current Search" />
+    );
+
+    mockCallback.mockReset();
+
+    sut
+      .find("StyledInput")
+      .simulate("change", { target: { value: "New Value" } });
+
+    expect(mockCallback).toHaveBeenCalledWith("New Value");
   });
 });
