@@ -11,6 +11,12 @@ describe("CharacterGrid", () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
+  it("renders no characters wtihout crashing", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(<CharactersGrid characters={[]} />, div);
+    ReactDOM.unmountComponentAtNode(div);
+  });
+
   it("renders correctly", () => {
     const sut = shallow(<CharactersGrid characters={characters.slice(0, 2)} />);
 
@@ -39,6 +45,16 @@ describe("CharacterGrid", () => {
           />
         </styled.li>
       </styled.ul>
+    `);
+  });
+
+  it("renders no characters correctly", () => {
+    const sut = shallow(<CharactersGrid characters={[]} />);
+
+    expect(sut).toMatchInlineSnapshot(`
+      <styled.p>
+        No Characters Found.
+      </styled.p>
     `);
   });
 });
