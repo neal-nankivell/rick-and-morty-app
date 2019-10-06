@@ -1,6 +1,12 @@
 import reducer from "./reducer";
 import initialState from "./initialState";
-import { Action, updateCharacters, loadCharacters } from "./actions";
+import {
+  Action,
+  updateCharacters,
+  loadCharacters,
+  updateFilter,
+  newFilter
+} from "./actions";
 import characters from "../testData/characters";
 
 describe("reducer", () => {
@@ -38,5 +44,26 @@ describe("reducer", () => {
     let result = sut(initialState, loadCharacters());
 
     expect(result).toEqual(initialState);
+  });
+
+  it("updateFilter action sets a new filter", () => {
+    const sut = reducer;
+    const state = initialState;
+    const filter = "Some new filter looking for the one true morty";
+
+    let result = sut(state, updateFilter(filter));
+
+    expect(result.filterString).toEqual(filter);
+  });
+
+  it("newFilter action is ignored", () => {
+    const sut = reducer;
+    const state = initialState;
+    const query = "Some new filter looking for the one true morty";
+
+    let result = sut(state, newFilter(query));
+
+    expect(result.filterString).not.toEqual(query);
+    expect(result).toEqual(state);
   });
 });
