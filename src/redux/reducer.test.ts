@@ -5,7 +5,8 @@ import {
   updateCharacters,
   loadCharacters,
   updateFilter,
-  newFilter
+  newFilter,
+  updateNextPage
 } from "./actions";
 import characters from "../testData/characters";
 
@@ -65,5 +66,15 @@ describe("reducer", () => {
 
     expect(result.filterString).not.toEqual(query);
     expect(result).toEqual(state);
+  });
+
+  it("updateNextPage ", () => {
+    const sut = reducer;
+    const state = initialState;
+    const newUrl = "woo some new url";
+
+    var result = sut(state, updateNextPage(newUrl));
+
+    expect(result.nextPageUrl).toEqual(newUrl);
   });
 });
