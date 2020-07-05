@@ -4,7 +4,7 @@ import fetchMock from "fetch-mock";
 describe("api", () => {
   const endpoint = "https://rickandmortyapi.com/api/character";
   const sut = api;
-  afterEach(fetchMock.reset);
+  afterEach(() => fetchMock.reset());
 
   test("get characters calls correct endpoint", async () => {
     const mockResponse = {
