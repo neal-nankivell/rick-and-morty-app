@@ -6,28 +6,28 @@ import {
   UPDATE_NEXT_PAGE,
   LOAD_MORE
 } from "./actionTypes";
-import { ActionType, createStandardAction } from "typesafe-actions";
+import { ActionType, createAction } from "typesafe-actions";
 import { Character } from "./ApplicationState";
 
-export const loadCharacters = createStandardAction(LOAD_CHARACTERS)();
+export const loadCharacters = createAction(LOAD_CHARACTERS)();
 
-export const updateCharacters = createStandardAction(UPDATE_CHARACTERS).map(
-  (characters: Character[]) => ({ payload: { characters } })
-);
+export const updateCharacters = createAction(UPDATE_CHARACTERS,
+  (characters: Character[]) => ({ characters })
+)();
 
-export const newFilter = createStandardAction(NEW_FILTER).map(
-  (filter: string) => ({ payload: { filter } })
-);
+export const newFilter = createAction(NEW_FILTER,
+  (filter: string) => ({ filter })
+)();
 
-export const updateFilter = createStandardAction(UPDATE_FILTER).map(
-  (filter: string) => ({ payload: { filter } })
-);
+export const updateFilter = createAction(UPDATE_FILTER,
+  (filter: string) => ({ filter })
+)();
 
-export const updateNextPage = createStandardAction(UPDATE_NEXT_PAGE).map(
-  (nextUrl: string | undefined) => ({ payload: { nextUrl } })
-);
+export const updateNextPage = createAction(UPDATE_NEXT_PAGE,
+  (nextUrl: string | undefined) => ({ nextUrl })
+)();
 
-export const loadMore = createStandardAction(LOAD_MORE)();
+export const loadMore = createAction(LOAD_MORE)();
 
 export type Action = ActionType<
   | typeof loadCharacters
