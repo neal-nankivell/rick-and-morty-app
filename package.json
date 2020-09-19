@@ -65,7 +65,7 @@
     "enzyme-adapter-react-16": "^1.15.4",
     "enzyme-to-json": "^3.5.0",
     "fetch-mock": "^9.10.7",
-    "prettier": "^2.1.1",
+    "prettier": "^2.1.2",
     "react-test-renderer": "^16.13.1"
   },
   "jest": {
