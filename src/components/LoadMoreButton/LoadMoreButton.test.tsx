@@ -24,7 +24,7 @@ describe("LoadMoreButton", () => {
       <styled.div>
         <StyledButton
           hidden={false}
-          onClick={[MockFunction LoadMoreButtonOnClick]}
+          onClick={[MockFunction]}
         >
           Load More
         </StyledButton>
