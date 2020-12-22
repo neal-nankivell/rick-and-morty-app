@@ -53,6 +53,8 @@ export async function getCharacters(
   return data;
 }
 
-export default {
+export const api = {
   getCharacters
 };
+
+export default api;
